@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Mohammad Agung Perdana - Senior Customer Success Specialist & Technical Solution Architect">
+<meta name="author" content="Mohammad Agung Perdana">
+<title>Mohammad Agung Perdana — Portfolio</title>
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira+Extra+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Custom Properties ===== */
+:root {
+  --c-primary: #2563eb;
+  --c-primary-light: #3b82f6;
+  --c-secondary: #0ea5e9;
+  --c-teal: #14b8a6;
+  --c-bg: #f8fafc;
+  --c-surface: #ffffff;
+  --c-text: #1e293b;
+  --c-text-muted: #64748b;
+  --c-border: #e2e8f0;
+  --c-sidebar: #0f172a;
+  --c-sidebar-text: rgba(255,255,255,0.55);
+  --c-sidebar-active: #2563eb;
+  --c-tag: #2563eb;
+  --c-tag-text: #ffffff;
+  --c-icon-bg: #0f172a;
+  --c-icon-text: #ffffff;
+  --c-caption-bg: rgba(0,0,0,0.7);
+  --c-caption-text: #fff;
+  --c-caption-sub: #0ea5e9;
+  --c-divider: rgba(0,0,0,0.08);
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sidebar-w: 17rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --transition: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --c-bg: #0f172a;
+  --c-surface: #1e293b;
+  --c-text: #e2e8f0;
+  --c-text-muted: #94a3b8;
+  --c-border: rgba(255,255,255,0.08);
+  --c-sidebar: #0f172a;
+  --c-icon-bg: #f8fafc;
+  --c-icon-text: #0f172a;
+  --c-divider: rgba(255,255,255,0.08);
+}
+
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);color:var(--c-text);background:var(--c-bg);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--c-primary);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--c-primary-light)}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;text-transform:uppercase;line-height:1.2}
+h1{font-size:5rem}
+h2{font-size:3.2rem;margin-bottom:2.5rem}
+h3{font-size:1.6rem;margin-bottom:0.25rem}
+p{margin-bottom:0.5rem}
+
+/* ===== Sidebar ===== */
+.sidebar{
+  position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;
+  background:var(--c-sidebar);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;z-index:1000;
+  border-right:1px solid rgba(255,255,255,0.08);padding:2rem 0;
+}
+.sidebar-avatar{width:10rem;height:10rem;border-radius:50%;border:0.4rem solid rgba(255,255,255,0.1);margin-bottom:1.5rem;object-fit:cover}
+.sidebar-name{display:none;color:#fff;font-family:var(--font-heading);font-size:1.25rem;font-weight:700;text-transform:uppercase}
+.sidebar-nav{list-style:none;width:100%;text-align:center}
+.sidebar-nav a{
+  display:block;padding:0.55rem 1rem;color:var(--c-sidebar-text);
+  font-weight:600;font-size:0.95rem;letter-spacing:0.04rem;
+  text-transform:uppercase;transition:color var(--transition);
+}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:var(--c-sidebar-active)}
+
+.theme-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.25);
+  color:rgba(255,255,255,0.65);border-radius:50%;
+  width:2.5rem;height:2.5rem;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;font-size:1rem;
+  transition:all var(--transition);margin-top:1.5rem;flex-shrink:0;
+}
+.theme-btn:hover{color:var(--c-sidebar-active);border-color:var(--c-sidebar-active)}
+
+.hamburger{display:none;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0.5rem 0.75rem;border-radius:0.25rem}
+
+/* ===== Main Content ===== */
+.main{margin-left:var(--sidebar-w)}
+
+.section{
+  min-height:100vh;display:flex;align-items:center;
+  padding:5rem 3rem;border-bottom:1px solid var(--c-divider);
+}
+.section:last-of-type{border-bottom:none}
+.section-inner{max-width:72rem;width:100%}
+
+.accent{color:var(--c-primary)}
+
+.subtitle{
+  font-family:var(--font-heading);font-weight:500;font-size:1.4rem;
+  text-transform:uppercase;color:var(--c-text);opacity:0.65;margin-bottom:1rem;
+}
+
+.lead-text{font-size:1.1rem;color:var(--c-text);opacity:0.8;line-height:1.7}
+
+/* ===== Social Icons ===== */
+.social-icons{display:flex;gap:1rem;margin-top:1.5rem}
+.social-icon{
+  width:3.2rem;height:3.2rem;border-radius:50%;
+  background:var(--c-icon-bg);color:var(--c-icon-text);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;transition:background var(--transition),transform var(--transition);
+}
+.social-icon:hover{background:var(--c-primary);color:#fff;transform:translateY(-2px)}
+
+/* ===== Experience ===== */
+.exp-item{
+  position:relative;padding-left:1.5rem;border-left:3px solid var(--c-primary);
+  margin-bottom:2rem;
+}
+.exp-item:last-child{margin-bottom:0}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-bottom:0.75rem}
+.exp-title{font-size:1.5rem;margin-bottom:0.15rem}
+.exp-company{font-family:var(--font-heading);font-size:1.2rem;text-transform:uppercase;opacity:0.65;margin-bottom:0.5rem}
+.exp-date{font-size:0.9rem;color:var(--c-primary);font-weight:600;white-space:nowrap}
+.exp-item ul{list-style:none;padding:0}
+.exp-item li{position:relative;padding-left:1.2rem;margin-bottom:0.15rem;font-size:0.95rem}
+.exp-item li::before{content:"·";position:absolute;left:0.2rem;color:var(--c-primary);font-weight:bold}
+.exp-projects{margin-top:0.25rem;padding-left:1.25rem}
+.exp-projects li::before{content:"•";left:0}
+
+/* ===== Skills ===== */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.skill-card{
+  background:var(--c-surface);border:1px solid var(--c-border);
+  border-radius:var(--radius-lg);padding:1.75rem;
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.skill-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+.skill-card h4{font-size:1.2rem;color:var(--c-primary);margin-bottom:1rem;text-transform:none;display:flex;align-items:center;gap:0.5rem}
+.skill-tag{
+  display:inline-block;background:var(--c-tag);color:var(--c-tag-text);
+  padding:0.2rem 0.65rem;border-radius:0.25rem;font-size:0.8rem;
+  margin:0.15rem 0.3rem 0.15rem 0;
+}
+.skill-tag-sm{margin:0.1rem 0.2rem 0.1rem 0}
+.dev-icons{display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding:0;margin-bottom:0.75rem}
+.dev-icons li{font-size:1.5rem;color:var(--c-text);transition:color var(--transition)}
+.dev-icons li:hover{color:var(--c-primary)}
+
+/* ===== Education ===== */
+.edu-item{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-bottom:2rem}
+.edu-item:last-child{margin-bottom:0}
+.edu-info h3{margin-bottom:0.15rem}
+.edu-info .subtitle{font-size:1.1rem;margin-bottom:0.25rem}
+.edu-date{font-size:0.9rem;color:var(--c-primary);font-weight:600;white-space:nowrap}
+
+/* ===== Carousel ===== */
+.carousel{position:relative;border-radius:var(--radius);overflow:hidden;background:#000}
+.carousel-track{display:flex;transition:transform 0.5s ease-in-out}
+.carousel-slide{min-width:100%}
+.carousel-slide img{width:100%;display:block}
+.carousel-caption{
+  display:none;position:absolute;bottom:1.5rem;left:5%;right:5%;
+  background:var(--c-caption-bg);border-radius:0.5rem;padding:1rem 1.5rem;
+}
+.carousel-caption h5{font-size:1.1rem;color:var(--c-caption-text);text-transform:none;margin-bottom:0.25rem}
+.carousel-caption p{font-size:0.9rem;color:var(--c-caption-sub);margin-bottom:0.15rem}
+
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);color:#fff;border:none;
+  width:3rem;height:3rem;border-radius:50%;font-size:1.2rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background var(--transition);z-index:2;
+}
+.carousel-btn:hover{background:rgba(0,0,0,0.7)}
+.carousel-prev{left:1rem}
+.carousel-next{right:1rem}
+
+.carousel-dots{display:flex;justify-content:center;gap:0.5rem;padding:0.75rem;position:absolute;bottom:0;left:0;right:0;flex-wrap:wrap}
+.carousel-dot{width:0.65rem;height:0.65rem;border-radius:50%;background:rgba(255,255,255,0.4);border:none;cursor:pointer;transition:background var(--transition);padding:0}
+.carousel-dot.active{background:#fff}
+
+/* ===== Divider ===== */
+.divider{border:0;border-top:1px solid var(--c-divider)}
+
+/* ===== Responsive ===== */
+@media (max-width:991px){
+  .sidebar{
+    position:relative;width:100%;height:auto;
+    flex-direction:row;justify-content:space-between;
+    padding:0.75rem 1.25rem;border-right:none;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-avatar{display:none}
+  .sidebar-name{display:block}
+  .sidebar-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--c-sidebar);padding:0.5rem 0;z-index:999;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .sidebar-nav.show{display:block}
+  .sidebar-nav a{padding:0.7rem 1.5rem;text-align:left}
+  .hamburger{display:block}
+  .theme-btn{position:absolute;right:4rem;top:50%;transform:translateY(-50%);margin-top:0}
+  .main{margin-left:0}
+  .section{padding:2.5rem 1.5rem;min-height:auto}
+  h1{font-size:3.5rem}
+  h2{font-size:2.2rem}
+  .skills-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:767px){
+  h1{font-size:2.8rem}
+  h2{font-size:1.8rem}
+  .exp-header{flex-direction:column}
+  .exp-date{margin-top:0.25rem}
+  .edu-item{flex-direction:column}
+  .edu-date{margin-top:0.25rem}
+}
+
+@media (min-width:768px){
+  .carousel-caption{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <img class="sidebar-avatar" src="assets/img/profilepict.jpg" alt="Mohammad Agung Perdana">
+  <span class="sidebar-name">Mohammad Agung Perdana</span>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+  <nav>
+    <ul class="sidebar-nav" id="sidebarNav">
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+  </nav>
+  <button class="theme-btn" id="themeToggle" title="Switch to dark mode" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <h1>Mohammad <span class="accent">Agung</span> Perdana</h1>
+      <div class="subtitle">Senior Customer Success Specialist | Technical Solution Architect</div>
+      <p style="margin-bottom:1.5rem;color:var(--c-text-muted)">
+        Jl. Swadaya No. 53 · Jakarta Barat, DKI Jakarta 11480 · (+62) 813-75675615 ·
+        <a href="mailto:mohmd.agung@gmail.com">mohmd.agung@gmail.com</a>
+      </p>
+      <p class="lead-text" style="margin-bottom:2rem;max-width:48rem">
+        Customer-focused IT professional with 5+ years of experience across software engineering and enterprise customer success. Managed 12+ enterprise accounts at Yellow.ai, where I have driven 20-30% faster implementation timelines and maintained a majority account renewal and expansion rate. Skilled at translating technical complexity into business value, managing escalations, and ensuring long-term client satisfaction.
+      </p>
+      <div class="social-icons">
+        <a class="social-icon" href="https://www.linkedin.com/in/agungmohmd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-icon" href="https://github.com/agungmohmd" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <h2>Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Senior Customer Success Engineer</div>
+            <div class="exp-company">Yellow.ai</div>
+          </div>
+          <div class="exp-date">October 2023 – January 2026</div>
+        </div>
+        <ul>
+          <li>Manage 12+ enterprise accounts as primary technical advisor, driving 20-30% reduction in implementation timelines through structured onboarding processes and proactive risk identification.</li>
+          <li>Achieved majority account renewal and expansion rate (50%+) by consistently aligning solution delivery with client business objectives and maintaining high post-launch satisfaction.</li>
+          <li>Resolved critical client escalations and prevented churn by coordinating cross-functional teams (engineering, product, QA) to deliver fixes within SLA, preserving key enterprise relationships.</li>
+          <li>Translated complex client requirements into technical specifications and delivery roadmaps, reducing sprint rework and enabling engineering teams to deliver predictably.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Backend Developer</div>
+            <div class="exp-company">ADL Indonesia (PT. Axiata Digital Labs Indonesia) — Outsourced by Lancesoft</div>
+          </div>
+          <div class="exp-date">May 2022 – August 2022</div>
+        </div>
+        <ul>
+          <li>System bug fixing</li>
+          <li>Develop REST API using Golang with PostgreSQL as DBMS</li>
+        </ul>
+        <ul class="exp-projects">
+          <li>ADA BSP (Automated WhatsApp Chat Solution Provider) | Backend with Golang</li>
+          <li>AKBAR (Retail Outlet Visitation Scheduling) | Backend with Golang</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Backend Developer</div>
+            <div class="exp-company">Bluebird Group — Outsourced by PT. ADi Consulting Indonesia</div>
+          </div>
+          <div class="exp-date">May 2022 – August 2022</div>
+        </div>
+        <ul>
+          <li>System bug fixing</li>
+          <li>Develop REST API using Golang with PostgreSQL as DBMS and gRPC for inter-service communication</li>
+          <li>Report every work on daily, weekly, and monthly according to the sprint</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Backend Developer</div>
+            <div class="exp-company">PT. Keluarga Satu Nol (Rebelworks) — After merged to PT. Dapur Rumah Sejahtera</div>
+          </div>
+          <div class="exp-date">April 2022 – September 2022</div>
+        </div>
+        <ul>
+          <li>Analyze actual workflow and customer needs to implement the new system to increase effectiveness</li>
+          <li>Develop REST API using Golang with PostgreSQL as DBMS on several projects such as Mental Health Awareness App and Electric Vehicle App</li>
+          <li>System bug fixing</li>
+          <li>Report every work on daily, weekly, and monthly according to the sprint</li>
+        </ul>
+        <ul class="exp-projects">
+          <li>Maxi App (Mental Health Care and Social Sharing) | Backend with Golang</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Backend Developer</div>
+            <div class="exp-company">PT. Dapur Rumah Sejahtera (Twiscode Pte. Ltd)</div>
+          </div>
+          <div class="exp-date">August 2021 – September 2022</div>
+        </div>
+        <ul>
+          <li>Analyze actual workflow and customer needs to implement the new system to increase effectiveness</li>
+          <li>Develop REST API using Golang and NodeJS with PostgreSQL as DBMS on several projects such as B2B Marketplace, Stock Market datafeeder, Hospital Management, Cooking Class app, Gym Membership App, and etc.</li>
+          <li>System bug fixing</li>
+          <li>Report every work on daily, weekly, and monthly according to the sprint</li>
+        </ul>
+        <ul class="exp-projects">
+          <li>Stellar (Gym Management App) | Fullstack with Laravel</li>
+          <li>Arfian (Cooking Course App) | Backend with Node.js (Express.js)</li>
+          <li>DokterApps (Medical Magazine and Alumni Management) | Backend with Golang</li>
+          <li>INAProject (B2B Marketplace) | Backend with Golang</li>
+          <li>Prodist (B2B Marketplace) | Backend with Golang</li>
+          <li>TradeSignal (Stock Market Chart) | Backend with Golang</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Senior Technical Operations</div>
+            <div class="exp-company">PT. Valuefirst Digital Media</div>
+          </div>
+          <div class="exp-date">November 2020 – February 2021</div>
+        </div>
+        <ul>
+          <li>Analyze user requests to implement customized chatflow and manage user PII data</li>
+          <li>Develop REST API using Laravel with PostgreSQL as DBMS</li>
+          <li>Develop SMSDASH web app using Angular, Express.js, and PostgreSQL</li>
+          <li>System bug fixing</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Web Developer</div>
+            <div class="exp-company">PT. Qtasnim Digital Teknologi</div>
+          </div>
+          <div class="exp-date">November 2019 – November 2020</div>
+        </div>
+        <ul>
+          <li>Analyze actual workflow and customer needs to implement the new system to increase effectiveness</li>
+          <li>Develop front end page using Angular</li>
+          <li>Develop REST API (microservices) using Express.js and MSSQL Server as DBMS</li>
+          <li>System bug fixing</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Technical Consultant</div>
+            <div class="exp-company">PT. Mitra Pasifik Solusindo</div>
+          </div>
+          <div class="exp-date">October 2018 – October 2019</div>
+        </div>
+        <ul>
+          <li>Provide good consultancy services for new or existing customers to implement ERP/HRIS software made by PT. Mitra Pasifik Solusindo</li>
+          <li>Implement ERP/HRIS software for new customer and train user how to use and handle business case</li>
+          <li>Create reporting template using SQL and DevExpress by request for user</li>
+          <li>Aftersales service for user such as fixing customer misused ERP/HRIS tools and report if there is a bug</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Programmer</div>
+            <div class="exp-company">PT. Mitra Pasifik Solusindo</div>
+          </div>
+          <div class="exp-date">May 2018 – October 2018</div>
+        </div>
+        <ul>
+          <li>Develop ERP (BIS Accounting System) / HRIS (APS) project using .NET Framework</li>
+          <li>Design database for some module in BIS Accounting</li>
+          <li>Fix some bugs if there is a report</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Computer Lab Assistant</div>
+            <div class="exp-company">Universitas Potensi Utama</div>
+          </div>
+          <div class="exp-date">October 2014 – July 2017</div>
+        </div>
+        <ul>
+          <li>Maintain computer peripherals (Software, Hardware, Networking) to provide better experience for students that use the computer laboratory</li>
+          <li>Assist lecturer and students on teaching-learning session</li>
+          <li>Fixing broken computer peripherals</li>
+          <li>Provide weekly, monthly, yearly report of lab usage, peripheral maintenance, and peripheral service</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="edu-info">
+          <h3>Universitas Potensi Utama</h3>
+          <div class="subtitle">Bachelor of Computer</div>
+          <p>Information Technology · GPA: 3.43</p>
+        </div>
+        <div class="edu-date">September 2014 – October 2018</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-info">
+          <h3>SMK Negeri 1 Air Putih</h3>
+          <div class="subtitle">Teknik Komputer & Jaringan</div>
+        </div>
+        <div class="edu-date">2010 – 2013</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h4><i class="fas fa-users"></i> Customer Success & Account Management</h4>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Client Onboarding</span>
+          <span class="skill-tag">Account Health Monitoring</span>
+          <span class="skill-tag">Churn Prevention</span>
+          <span class="skill-tag">Upsell & Renewal</span>
+          <span class="skill-tag">Escalation Management</span>
+          <span class="skill-tag">SLA Management</span>
+          <span class="skill-tag">NPS / CSAT</span>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fas fa-tasks"></i> Project & Delivery</h4>
+          <span class="skill-tag">Agile & Scrum</span>
+          <span class="skill-tag">SDLC</span>
+          <span class="skill-tag">Requirement Analysis</span>
+          <span class="skill-tag">Sprint Planning</span>
+          <span class="skill-tag">UAT Coordination</span>
+          <span class="skill-tag">Risk Management</span>
+          <span class="skill-tag">Technical Documentation</span>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fas fa-code"></i> Technical Proficiency</h4>
+          <ul class="dev-icons">
+            <li><i class="fa-brands fa-golang"></i></li>
+            <li><i class="fab fa-docker"></i></li>
+            <li><i class="fab fa-js-square"></i></li>
+            <li><i class="fab fa-node-js"></i></li>
+            <li><i class="fab fa-html5"></i></li>
+            <li><i class="fab fa-css3-alt"></i></li>
+            <li><i class="fab fa-angular"></i></li>
+            <li><i class="fab fa-vuejs"></i></li>
+            <li><i class="fab fa-npm"></i></li>
+            <li><i class="fab fa-php"></i></li>
+            <li><i class="fab fa-laravel"></i></li>
+            <li><i class="fas fa-database"></i></li>
+            <li><i class="fas fa-server"></i></li>
+            <li><i class="fab fa-linux"></i></li>
+            <li><i class="fab fa-git"></i></li>
+          </ul>
+          <span class="skill-tag skill-tag-sm">RESTful & SOAP APIs</span>
+          <span class="skill-tag skill-tag-sm">System Integration</span>
+          <span class="skill-tag skill-tag-sm">SQL</span>
+          <span class="skill-tag skill-tag-sm">Postman</span>
+          <span class="skill-tag skill-tag-sm">Git</span>
+          <span class="skill-tag skill-tag-sm">Jira / Trello</span>
+          <span class="skill-tag skill-tag-sm">Conversational AI Platforms</span>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fas fa-building"></i> Domain Knowledge</h4>
+          <span class="skill-tag">B2B SaaS</span>
+          <span class="skill-tag">Enterprise Software</span>
+          <span class="skill-tag">Conversational AI</span>
+          <span class="skill-tag">ERP / HRIS</span>
+          <span class="skill-tag">Fintech</span>
+          <span class="skill-tag">B2B Marketplace</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- INTERESTS -->
+  <section class="section" id="interests">
+    <div class="section-inner">
+      <h2>Interests</h2>
+      <p class="lead-text" style="margin-bottom:1rem">
+        Apart from being a backend developer, I enjoy most of my time doing my hobby like swimming, reading, studying new things, doing a journey with my motorbike. I also like to be a public speaker for my community (at least I used to be MC on some of our events).
+      </p>
+      <p class="lead-text">
+        When forced indoors, I follow a number of sci-fi and fantasy genre movies and anime shows, and I spend a large amount of my free time exploring the latest technology advancements in the web development world.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="section-inner">
+      <h2>What I've Done</h2>
+      <p style="color:var(--c-text-muted);margin-bottom:2rem">
+        This only shows some of my projects — most of my projects are backend only so there is no screenshot I could share.
+      </p>
+
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="carousel-slide">
+            <img src="assets/project-ss/cisea/1.jpeg" alt="Cisea App">
+            <div class="carousel-caption">
+              <h5>Cisea App For PT. Bukit Asam</h5>
+              <p>Developed with Angular, ExpressJS and MSSQL Server</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/cisea/2.jpeg" alt="Cisea App">
+            <div class="carousel-caption">
+              <h5>Cisea App For PT. Bukit Asam</h5>
+              <p>Developed with Angular, ExpressJS and MSSQL Server</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/cisea/3.jpeg" alt="Cisea App">
+            <div class="carousel-caption">
+              <h5>Cisea App For PT. Bukit Asam</h5>
+              <p>Developed with Angular, ExpressJS and MSSQL Server</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/cisea/4.jpeg" alt="Cisea App">
+            <div class="carousel-caption">
+              <h5>Cisea App For PT. Bukit Asam</h5>
+              <p>Developed with Angular, ExpressJS and MSSQL Server</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="assets/project-ss/smsdash/admin-1.PNG" alt="SMSDASH">
+            <div class="carousel-caption">
+              <h5>SMSDASH For LOTTEMART Indonesia</h5>
+              <p>Made from scratch with PT. Valuefirst Komunikasi Indonesia</p>
+              <p>Developed with Angular, ExpressJS and PostgreSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/smsdash/admin-2.PNG" alt="SMSDASH">
+            <div class="carousel-caption">
+              <h5>SMSDASH For LOTTEMART Indonesia</h5>
+              <p>Made from scratch with PT. Valuefirst Komunikasi Indonesia</p>
+              <p>Developed with Angular, ExpressJS and PostgreSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/smsdash/assoc-page.PNG" alt="SMSDASH">
+            <div class="carousel-caption">
+              <h5>SMSDASH For LOTTEMART Indonesia</h5>
+              <p>Made from scratch with PT. Valuefirst Komunikasi Indonesia</p>
+              <p>Developed with Angular, ExpressJS and PostgreSQL</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="assets/project-ss/monit-kalib/Capture.PNG" alt="Monitoring Kalibrasi">
+            <div class="carousel-caption">
+              <h5>Monitoring Kalibrasi For PT. KAI</h5>
+              <p>Made from scratch with PT. Qtasnim Digital Teknologi</p>
+              <p>Developed with Vue.js, Laravel and MySQL</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="assets/project-ss/twiscodexrebelworks/arvian.png" alt="Arvian">
+            <div class="carousel-caption">
+              <h5>Arvian — Cooking Class App</h5>
+              <p>(Backend) REST API with Node.js (Express.js) and MSSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/twiscodexrebelworks/dokter-apps.png" alt="DokterApps">
+            <div class="carousel-caption">
+              <h5>DokterApps — Health Magazine App</h5>
+              <p>(Backend) REST API with Golang and PostgreSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/twiscodexrebelworks/IFM.jpg" alt="IFM">
+            <div class="carousel-caption">
+              <h5>IFM — Employee Management Web App</h5>
+              <p>(Backend) REST API with Symfony and MSSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/twiscodexrebelworks/INA-Product.png" alt="INA Product">
+            <div class="carousel-caption">
+              <h5>INA Product — B2B Marketplace</h5>
+              <p>(Backend) REST API with Golang and PostgreSQL</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/project-ss/twiscodexrebelworks/Prodist.png" alt="PRODIST">
+            <div class="carousel-caption">
+              <h5>PRODIST — B2B Marketplace</h5>
+              <p>(Backend) REST API with Golang and PostgreSQL</p>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ===== THEME ===== */
+  var themeToggle = document.getElementById('themeToggle');
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (themeToggle) {
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+  }
+  var saved = localStorage.getItem('theme');
+  if (!saved) saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  setTheme(saved);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(){
+      setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  /* ===== MOBILE HAMBURGER ===== */
+  var hamburger = document.getElementById('hamburger');
+  var sidebarNav = document.getElementById('sidebarNav');
+  if (hamburger && sidebarNav) {
+    hamburger.addEventListener('click', function(){
+      sidebarNav.classList.toggle('show');
+    });
+  }
+
+  /* ===== SMOOTH SCROLL + ACTIVE NAV ===== */
+  var navLinks = document.querySelectorAll('.sidebar-nav a');
+  var sections = document.querySelectorAll('.section');
+
+  navLinks.forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      if (sidebarNav) sidebarNav.classList.remove('show');
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(l){ l.classList.remove('active'); });
+        var active = document.querySelector('.sidebar-nav a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+
+  sections.forEach(function(s){ observer.observe(s); });
+
+  /* ===== CAROUSEL ===== */
+  var track = document.getElementById('carouselTrack');
+  var dotsContainer = document.getElementById('carouselDots');
+  var slides = document.querySelectorAll('.carousel-slide');
+  var current = 0;
+  var total = slides.length;
+  var autoInterval;
+
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', (function(idx){ return function(){ goTo(idx); }; })(i));
+    dotsContainer.appendChild(dot);
+  }
+  var dots = document.querySelectorAll('.carousel-dot');
+
+  function goTo(idx) {
+    current = idx;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d){ d.classList.remove('active'); });
+    if (dots[current]) dots[current].classList.add('active');
+    resetAuto();
+  }
+
+  function nextSlide() {
+    goTo((current + 1) % total);
+  }
+
+  function prevSlide() {
+    goTo((current - 1 + total) % total);
+  }
+
+  function resetAuto() {
+    clearInterval(autoInterval);
+    autoInterval = setInterval(nextSlide, 5000);
+  }
+
+  document.getElementById('carouselPrev').addEventListener('click', prevSlide);
+  document.getElementById('carouselNext').addEventListener('click', nextSlide);
+  resetAuto();
+
+  /* touch swipe */
+  var touchStartX = 0;
+  var carousel = document.getElementById('carousel');
+  carousel.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; });
+  carousel.addEventListener('touchend', function(e){
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+  });
+
+})();
+</script>
+
+</body>
+</html>
